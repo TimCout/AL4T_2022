@@ -15,7 +15,6 @@ public class SoundManager {
 
 	public SoundManager() {
 		try {
-			// Vérification et chargement du premier son
 			InputStream inputStream = getClass().getResourceAsStream("/Traffic Sounds - Free Sound Effects - Traffic Sound Clips - Sound Bites.wav");
 			if (inputStream == null) {
 				throw new IOException("Resource '/Traffic Sounds - Free Sound Effects - Traffic Sound Clips - Sound Bites.wav' not found");
@@ -25,7 +24,7 @@ public class SoundManager {
 			clip.open(soundStream);
 			clip.loop(Clip.LOOP_CONTINUOUSLY);
 
-			// Vérification et chargement du son de drift
+
 			InputStream driftStreamInput = getClass().getResourceAsStream("/drift.wav");
 			if (driftStreamInput == null) {
 				throw new IOException("Resource '/drift.wav' not found");
@@ -35,7 +34,6 @@ public class SoundManager {
 			driftClip.open(driftStream);
 			driftClip.start();
 
-			// Garder le programme en marche
 			Thread.sleep(100000000); // looping as long as this thread is alive
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Failed to load audio", e);
