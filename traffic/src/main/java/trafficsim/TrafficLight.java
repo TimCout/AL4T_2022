@@ -220,4 +220,3 @@ public class TrafficLight implements ActionListener{
 	}
 }
 
-//f
